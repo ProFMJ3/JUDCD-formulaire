@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Formulaire d'inscription</title>
+    <link rel="stylesheet" href="judcd_inscription.css"> <!-- Lien vers le fichier CSS -->
+</head>
+<body>
+    <form id="inscriptionForm" enctype="multipart/form-data" action="basejudcd.php" method="POST">
+        <!-- Section du logo de l'entreprise -->
+        <div class="logo-container">
+            <img src="judcd.jpg" alt="Logo de l'entreprise"> <!-- Remplacez "judcd.jpg" par le chemin de votre logo -->
+        </div>
+
+        <!-- Texte volumineux ajouté avant "Inscription" -->
+        <div class="intro-text">
+            <p>Bienvenue sur notre plateforme d'inscription! <br>Nous serons heureux de vous accueillir parmi nous.</p>
+        </div>
+
+        <h2>Inscription</h2>
+
+        <label for="nom">Nom :</label>
+        <input type="text" id="nom" name="nom" required placeholder="Entrez votre nom">
+        <span class="error-message" id="nomError">Le nom est requis.</span>
+
+        <label for="prenom">Prénom :</label>
+        <input type="text" id="prenom" name="prenom" required placeholder="Votre Prénom">
+        <span class="error-message" id="prenomError">Le prénom est requis.</span>
+
+        <label for="sexe">Sexe :</label>
+        <div class="sexe-options">
+            <input type="radio" id="sexe_homme" name="sexe" value="Homme" required>
+            <label for="sexe_homme">Homme</label>
+            <input type="radio" id="sexe_femme" name="sexe" value="Femme" required>
+            <label for="sexe_femme">Femme</label>
+            <span class="error-message" id="sexeError">Le sexe est requis.</span>
+        </div>
+
+        <!-- Champ "Date de naissance" déplacé avant "Adresse" et "Email" -->
+        <label for="date_naissance">Date de Naissance :</label>
+        <input type="date" id="date_naissance" name="date_naissance" required>
+        <span class="error-message" id="dateNaissanceError">La date de naissance est requise.</span>
+
+        <label for="adresse">Adresse :</label>
+        <input type="text" id="adresse" name="adresse" required placeholder="Avédji-Coconut, LOME-TOGO">
+        <span class="error-message" id="adresseError">L'adresse est requise.</span>
+
+        <label for="email">Email :</label>
+        <input type="email" id="email" name="email" required placeholder="name@gmail.com">
+        <span class="error-message" id="emailError">Veuillez entrer un email valide.</span>
+
+        <!-- Nouveau champ "Téléphone" ajouté après "Email" -->
+        <label for="telephone">Téléphone :</label>
+        <input type="tel" id="telephone" name="telephone" required placeholder="ex: +22899000000" pattern="^\+228\d{8}$" required>
+        <span class="error-telephone" id="telephoneError">Veuillez entrer un numéro de téléphone valide (11 chiffres).</span>
+
+        <!-- Nouveau champ "Professiion" ajouté après Téléphone-->
+        <label for="profession">Profession :</label>
+        <input type="text" id="profession" name="profession" required placeholder="Ingénieur">
+        <span class="error-message" id="professionError">La profession est requise.</span>
+
+        <!-- Structure pour l'upload de fichier -->
+        <div class="file-upload">
+            <label for="photo">Photo d'identité :</label>
+            <div class="file-upload-button">
+                Choisir un fichier
+                <input type="file" id="photo" name="photo" accept="image/*">
+            </div>
+            <div class="file-name" id="fileName">Aucun fichier sélectionné</div>
+            <span class="error-message" id="photoError">Veuillez télécharger une photo d'identité.</span>
+        </div>
+
+        <button type="submit">S'inscrire</button>
+        
+        <div class="intro-text">
+            <p style="font-size: 11px;"> 
+                <p>Ce formulaire vous permet de finaliser votre inscription à l'association <strong>JUDCD</strong> (Jeunes Unis pour le Développement Communautaire Durable) et d'accéder à nos services réservés aux membres.</p>
+                <p>Merci de compléter soigneusement tous les champs demandés. Les informations marquées d'un astérisque (*) sont obligatoires.</p>
+                <p>Une fois votre inscription validée, vous recevrez un email de confirmation.</p>
+                <p>Nous vous remercions pour votre coopération. Nous sommes impatients de travailler avec vous et de vous offrir un service de qualité.</p>
+        </div>
+    </form>
+
+    <script src="judcd_inscription.js"></script> <!-- Lien vers le fichier JavaScript -->
+</body>
+</html>
+
