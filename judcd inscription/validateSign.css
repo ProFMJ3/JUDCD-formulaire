@@ -49,3 +49,12 @@ p {
     opacity: 0;
     transition: opacity 0.5s ease;
 }
+
+.recap .image{
+    justify-content: center;
+    align-content: center;
+
+    max-width: 100%;
+    width: 300px;
+    border-radius: 10px;
+}

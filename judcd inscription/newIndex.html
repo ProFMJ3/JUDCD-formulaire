@@ -1,0 +1,324 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JUCDC-INSCRIPTION</title>
+
+
+    <link rel="stylesheet" href="../assets/css/bootstrap.min.css">
+
+    <style>
+        body{
+            margin: 0;
+            padding: 0;
+            background-color:darkblue;
+        }
+
+        .container{
+            background-color: white;
+            border-radius:10px;
+            font-family: "Times New Roman", sans-serif;
+            margin: auto;
+            padding: auto;
+
+        }
+        .content-form {
+
+            border: 1px solid #ddd;
+            border-radius: 10px;
+            padding: 25px;
+            margin: 0;
+            background-color: #f9f9f9;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            /*transition:0.8s;*/
+        }
+        .content-form h2{
+            color:green;
+            font-weight: bold;
+        }
+        .content-form input, select, radio, checkbox, option{
+
+            border-radius: 15px;
+
+
+        }
+        label{
+            margin-top: 10px;
+            font-weight: bold;
+            margin-bottom: 5px;
+        }
+        input[type="file"]{
+            border-radius: 15px;
+            padding: 10px;
+            border: 1px solid #ddd;
+            width: 100%;
+            margin-top: 5px;
+            margin-bottom: 10px;
+            background-color: darkblue;
+            color:white;
+        }
+
+
+
+
+        /*.content-form:hover{
+            box-shadow: 0 3px 2px rgb(0,0,0,0.2);
+            transform: scale(1.04);
+            border-radius: 10px;
+
+        }*/
+
+
+
+
+        .btn {
+            font-family: "Times New Roman", sans-serif;
+            border-radius: 15px;
+            font-weight: bold;
+            background-color: darkblue;
+        }
+
+        .content-image {
+            background-color: #f9f9f9;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            border-radius: 10px;
+            padding-left: 50px;
+            flex-direction: column;
+            height: 100vh;
+        }
+        .titre {
+            display: flex;
+            margin-top: 200px;
+            font-family: "Times New Roman", sans-serif;
+            text-align: center;
+            font-weight: bold;
+            background-color: darkblue;
+            justify-content: center;
+            justify-items: center;
+            align-items: center;
+            align-content: center;
+            color: white;
+        }
+
+        .text-description{
+            margin-top: 0;
+            font-family: "Times New Roman", sans-serif;
+            text-align: center;
+            margin-bottom: 180px;
+        }
+
+        .content-image img {
+            margin:auto;
+            height: 60%;
+            border-radius: 10px;
+        }
+
+        .text-description p {
+            font-family: "Times New Roman", sans-serif;
+            font-size: 18px;
+            text-align: center;
+            margin-bottom: 20px;
+
+        }
+
+        .content-form h3 {
+
+            font-family: "Times New Roman", sans-serif;
+            text-align: center;
+            font-weight: bold;
+            margin-top: 30px;
+        }
+        .message {
+            font-family: "Times New Roman", sans-serif;
+            display: flex;
+            text-align: center;
+            justify-content: center;
+            align-items: center;
+            color:white;
+            font-size: 18px;
+            margin-top: 10px;
+            font-weight: bold;
+
+        }
+
+
+        a{
+            font-weight:bold;
+        }
+        .btn:hover{
+            background-color:blue;
+        }
+        .center{
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            margin-top: 10px;
+        }
+
+
+    </style>
+
+
+<body>
+
+
+
+<div class="container mt-5">
+
+
+
+
+
+    <form action="basejudcd.php" method="POST" enctype="multipart/form-data" >
+
+
+
+        <div class="row">
+            <div class="content-image col-md-6">
+                <div class="titre form-control">
+                    <h3 class="text-center">FORMULAIRE D'INSCRIPTION</h3>
+
+
+                </div>
+
+                <img src="judcd.jpg" alt="logo" class="img-fluid" style="border-radius:10px;">
+
+
+                <div class="text-description">
+
+
+
+
+                    <p class="text-center">
+                        Ce formulaire vous permet de finaliser votre inscription à l'association <strong>JUDCD</strong> (Jeunes Unis pour le Développement Communautaire Durable) et d'accéder à nos services réservés aux membres.
+                        Merci de compléter soigneusement tous les champs demandés. Les informations marquées d'un astérisque (*) sont obligatoires.
+                        Une fois votre inscription validée, vous recevrez un email de confirmation.
+                    </p>
+                </div>
+            </div>
+
+            <div class="col-md-6">
+
+                <div class="content-form">
+
+
+                    <div class="form-group">
+                        <label for="nom">Nom :</label>
+                        <input class="form-control" type="text" id="nom" name="nom" required placeholder="Entrez votre nom">
+
+
+                        <label for="prenom">Prénom :</label>
+                        <input class="form-control" type="text" id="prenom" name="prenom" required placeholder="Votre Prénom">
+
+
+                        <label for="sexe">Sexe :</label>
+                        <select id="sexe" name="sexe" class="form-control">
+
+                            <option value="" disabled selected>Select</option>
+                            <option value="M">Masculin</option>
+                            <option value="F">Féminin</option>
+
+
+
+
+                        </select>
+
+                        <!-- Champ "Date de naissance" déplacé avant "Adresse" et "Email" -->
+                        <label  for="date_naissance">Date de Naissance :</label>
+                        <input class="form-control" type="date" id="date_naissance" name="date_naissance" required>
+
+
+                        <label for="adresse">Adresse :</label>
+                        <input type="text" id="adresse" class="form-control" name="adresse" required placeholder="Avédji-Coconut, LOME-TOGO">
+
+
+                        <label for="email">Email :</label>
+
+                        <input type="email" class="form-control" name="email" id="email"  required placeholder="name@gmail.com">
+
+
+                        <!-- Nouveau champ "Téléphone" ajouté après "Email" -->
+                        <label for="telephone">Téléphone :</label>
+                        <input type="tel" class="form-control" id="telephone" name="telephone" placeholder="ex: +22899000000" pattern="^\+228\d{8}$" required>
+
+                        <!-- Nouveau champ "Professiion" ajouté après Téléphone-->
+                        <label for="profession">Profession :</label>
+                        <input class="form-control" type="text" id="profession" name="profession" required placeholder="Ingénieur">
+
+
+                        <!-- Structure pour l'upload de fichier -->
+
+                            <label for="id_image">Photo d'identité :</label>
+                            <input type="file" id="id_image" name="photo" accept="image/*">
+
+
+                    </div>
+
+                    <div class="center" >
+                        <button type="submit" class="btn btn-success form-control">Soumettre</button>
+                    </div>
+
+                </div>
+
+
+            </div>
+
+        </div>
+
+    </form>
+</div>
+
+
+<script src='../assets/js/bootstrap.min.js' ></script>
+<script>
+    document.getElementById("id_image").addEventListener("change", function (event) {
+        const file = event.target.files[0];
+
+        if (file) {
+            const img = new Image();
+            img.src = URL.createObjectURL(file);
+
+            img.onload = function () {
+
+                if (!(this.width === 413 && this.height === 531) && !(this.width === 600 && this.height === 600)) {
+                    alert("La photo doit être au format 413x531 ou 600x600 pixels c'est-à-dire format PassPort.");
+                    event.target.value = "";  // Réinitialiser le champ
+                }else{
+                    alert("La photo est au bon format");
+
+                }
+            };
+        }
+    });
+
+
+
+    const params = new URLSearchParams(window.location.search);
+    const emailField = document.getElementById("email");
+    const errorMessage = params.get("error");
+    const emailValue = params.get("email");
+
+    if (emailField && emailValue) {
+        emailField.value = decodeURIComponent(emailValue);
+    }
+
+    if (emailField && emailValue) {
+        emailField.value = decodeURIComponent(emailValue);
+    }
+    if (errorMessage) {
+        const errorDiv = document.createElement("div");
+        errorDiv.style.color = "red";
+        errorDiv.style.marginBottom = "10px"; // Ajoute un espace sous l'erreur
+        errorDiv.textContent = decodeURIComponent(errorMessage);
+
+        emailField.parentNode.insertBefore(errorDiv, emailField.nextSibling);
+    }
+
+</script>
+
+</body>
+</html>
